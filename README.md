@@ -4,7 +4,7 @@ A zero-runtime-dependency security toolkit for Node.js HTTP APIs.
 
 SecureKit combines security headers, CORS, rate limiting, request-size limits, API-key authentication, and request IDs in a single compile-time pipeline. Configuration is validated once at startup and compiled into a flat step array—disabled modules add no per-request overhead.
 
-`securekit` has no npm runtime dependencies; it uses only Node.js built-ins.
+`@securekit/core` has no npm runtime dependencies; it uses only Node.js built-ins.
 
 ## Requirements
 
@@ -13,7 +13,7 @@ SecureKit combines security headers, CORS, rate limiting, request-size limits, A
 ## Installation
 
 ```bash
-pnpm add securekit @securekit/express
+pnpm add @securekit/core @securekit/express
 # Optional: @securekit/fastify @securekit/redis @securekit/context @securekit/cli
 ```
 
@@ -21,7 +21,7 @@ pnpm add securekit @securekit/express
 
 ```typescript
 import express from "express";
-import { securekit } from "securekit";
+import { securekit } from "@securekit/core";
 import { expressAdapter } from "@securekit/express";
 
 const kit = securekit({
@@ -50,7 +50,7 @@ See [`examples/express-basic.mjs`](examples/express-basic.mjs) for a runnable ex
 
 | Package | Description |
 | --- | --- |
-| [`securekit`](docs/modules/core.md) | Compiler and security pipeline (zero runtime dependencies) |
+| [`@securekit/core`](docs/modules/core.md) | Compiler and security pipeline (zero runtime dependencies) |
 | [`@securekit/express`](docs/modules/express.md) | Express middleware adapter |
 | [`@securekit/fastify`](docs/modules/fastify.md) | Fastify plugin adapter |
 | [`@securekit/redis`](docs/modules/redis.md) | Redis-backed rate-limit store |
@@ -59,8 +59,8 @@ See [`examples/express-basic.mjs`](examples/express-basic.mjs) for a runnable ex
 
 Additional entry points:
 
-- `securekit/crypto` — `safeCompare`, `hash`, `hmac`, token and request ID helpers
-- `securekit/internal` — adapter and plugin contracts (unstable; no semver guarantee)
+- `@securekit/core/crypto` — `safeCompare`, `hash`, `hmac`, token and request ID helpers
+- `@securekit/core/internal` — adapter and plugin contracts (unstable; no semver guarantee)
 
 ## Pre-deployment audit
 

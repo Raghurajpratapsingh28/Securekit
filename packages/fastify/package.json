@@ -19,7 +19,7 @@
     "test": "pnpm run build && node --test tests/**/*.test.ts"
   },
   "dependencies": {
-    "securekit": "workspace:*",
+    "@securekit/core": "workspace:*",
     "fastify-plugin": "^4.5.1"
   },
   "peerDependencies": {

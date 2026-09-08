@@ -58,7 +58,7 @@ Details: [docs/maintainers/README.md](docs/maintainers/README.md)
 
 ## Adding a plugin
 
-Plugins implement `Plugin` from `securekit/internal`:
+Plugins implement `Plugin` from `@securekit/core/internal`:
 
 ```typescript
 { name: "my-plugin", compile(steps, config) { steps.push((ctx) => CONTINUE); } }
@@ -69,7 +69,7 @@ Validate config in `compile`, not at request time. See `packages/core/tests/plug
 ## Adding an adapter
 
 1. Create `packages/<framework>/` with peer dependency on the framework
-2. Depend on `securekit` and `securekit/internal`
+2. Depend on `securekit` and `@securekit/core/internal`
 3. Implement context translation + result application only
 4. Add tests mirroring `tests/adapters/parity.test.ts` scenarios
 5. Document in `docs/modules/<framework>.md`

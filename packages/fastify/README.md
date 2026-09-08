@@ -16,7 +16,7 @@ pnpm add securekit @securekit/fastify fastify
 
 ```typescript
 import Fastify from "fastify";
-import { securekit } from "securekit";
+import { securekit } from "@securekit/core";
 import { fastifyPlugin } from "@securekit/fastify";
 
 const kit = securekit({

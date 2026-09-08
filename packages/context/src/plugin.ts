@@ -1,4 +1,4 @@
-import type { Plugin } from "securekit/internal";
+import type { Plugin } from "@securekit/core/internal";
 import { enterRequestContext } from "./storage.js";
 
 export function contextPlugin(): Plugin {

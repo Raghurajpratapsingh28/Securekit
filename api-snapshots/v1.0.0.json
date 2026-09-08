@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "packages": {
-    "securekit": [
+    "@securekit/core": [
       "AuthenticationError",
       "ConfigurationError",
       "CorsError",
@@ -10,14 +10,14 @@
       "SecureKitError",
       "securekit"
     ],
-    "securekit/crypto": [
+    "@securekit/core/crypto": [
       "generateRequestId",
       "generateToken",
       "hash",
       "hmac",
       "safeCompare"
     ],
-    "securekit/internal": [
+    "@securekit/core/internal": [
       "AuthenticationError",
       "CONTINUE",
       "ConfigurationError",

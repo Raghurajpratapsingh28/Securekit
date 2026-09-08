@@ -38,7 +38,7 @@ Express implements this via `toExpressContext` + `applyExpressResult`. Fastify v
 ## Adding a new adapter
 
 1. Create `packages/<framework>/` with peer dependency on framework
-2. Depend on `securekit` only (use `securekit/internal` for context helpers)
+2. Depend on `@securekit/core` only (use `@securekit/core/internal` for context helpers)
 3. Implement context translation — **do not** duplicate security checks
 4. Map `continue` — `next()` / hook continuation; `respond` — short-circuit response
 5. Add adapter tests mirroring `tests/adapters/parity.test.ts` scenarios

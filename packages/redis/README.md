@@ -14,7 +14,7 @@ pnpm add securekit @securekit/redis redis
 
 ```typescript
 import { createClient } from "redis";
-import { securekit } from "securekit";
+import { securekit } from "@securekit/core";
 import { RedisStore, adaptRedisClient } from "@securekit/redis";
 
 const client = createClient({ url: process.env.REDIS_URL });

@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@securekit/core':
+        specifier: workspace:*
+        version: link:packages/core
       '@securekit/express':
         specifier: workspace:*
         version: link:packages/express
@@ -26,9 +29,6 @@ importers:
       fastify:
         specifier: ^4.28.0
         version: 4.29.1
-      securekit:
-        specifier: workspace:*
-        version: link:packages/core
       supertest:
         specifier: ^7.0.0
         version: 7.2.2
@@ -38,7 +38,7 @@ importers:
 
   packages/cli:
     dependencies:
-      securekit:
+      '@securekit/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -51,7 +51,7 @@ importers:
 
   packages/context:
     dependencies:
-      securekit:
+      '@securekit/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -73,7 +73,7 @@ importers:
 
   packages/express:
     dependencies:
-      securekit:
+      '@securekit/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -98,12 +98,12 @@ importers:
 
   packages/fastify:
     dependencies:
+      '@securekit/core':
+        specifier: workspace:*
+        version: link:../core
       fastify-plugin:
         specifier: ^4.5.1
         version: 4.5.1
-      securekit:
-        specifier: workspace:*
-        version: link:../core
     devDependencies:
       '@types/node':
         specifier: ^22.5.0
@@ -117,12 +117,12 @@ importers:
 
   packages/redis:
     dependencies:
+      '@securekit/core':
+        specifier: workspace:*
+        version: link:../core
       redis:
         specifier: ^4.7.0 || ^5.0.0
         version: 5.12.1
-      securekit:
-        specifier: workspace:*
-        version: link:../core
     devDependencies:
       '@types/node':
         specifier: ^22.5.0

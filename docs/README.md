@@ -9,7 +9,7 @@ Documentation for SecureKit v1.0. The product specification is available as `Sec
 | [Architecture](architecture.md) | Compile-time pipeline, package boundaries, request lifecycle |
 | [Configuration](configuration.md) | `SecureKitConfig` reference and safe defaults |
 | [Compatibility](compatibility.md) | Supported Node.js and framework versions |
-| [Deprecation policy](deprecation-policy.md) | Semver rules and `securekit/internal` stability |
+| [Deprecation policy](deprecation-policy.md) | Semver rules and `@securekit/core/internal` stability |
 | [Load balancer / proxy](load-balancer.md) | Trusted IP forwarding and distributed rate limits |
 | [CLI audit tool](cli.md) | `securekit audit` usage and CI integration |
 | [Benchmark report](benchmark-report.md) | Methodology and measured results |

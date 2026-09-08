@@ -27,13 +27,13 @@
     "verify:clean-room": "pnpm run build && node scripts/clean-room-consumer.mjs",
     "verify:certification": "pnpm run build && pnpm verify:zero-deps && pnpm verify:artifacts && pnpm verify:clean-room",
     "smoke:test": "pnpm run build && node scripts/smoke-test.mjs",
-    "verify:deps": "pnpm ls --prod --filter securekit --json",
+    "verify:deps": "pnpm ls --prod --filter @securekit/core --json",
     "verify:import-boundaries": "node scripts/verify-import-boundaries.mjs",
-    "verify:api": "pnpm --filter securekit run build && node --test packages/core/tests/public-api.test.ts tests/api-snapshot.test.ts",
+    "verify:api": "pnpm --filter @securekit/core run build && node --test packages/core/tests/public-api.test.ts tests/api-snapshot.test.ts",
     "lint:secrets": "node scripts/verify-secret-comparisons.mjs"
   },
   "devDependencies": {
-    "securekit": "workspace:*",
+    "@securekit/core": "workspace:*",
     "@securekit/express": "workspace:*",
     "@securekit/fastify": "workspace:*",
     "@types/node": "^22.5.0",

@@ -1,7 +1,10 @@
 {
-  "name": "securekit",
+  "name": "@securekit/core",
   "version": "1.0.0",
   "description": "Zero-runtime-dependency security toolkit core for Node.js APIs ? Config Compiler, Pipeline Runner, SecureKitContext, and error architecture.",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "license": "MIT",
   "repository": {

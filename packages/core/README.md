@@ -1,10 +1,10 @@
-# securekit
+# @securekit/core
 
 **A zero-runtime-dependency security engine for Node.js HTTP APIs.**
 
 SecureKit combines security headers, CORS, request-size limits, rate limiting, request IDs, and API-key authentication in one compile-time pipeline. You configure it once at startup; SecureKit validates that configuration, compiles it into a flat step array, and runs those steps on every request. Disabled modules add no per-request cost.
 
-This document is the primary reference for the `securekit` npm package. It is written so you can install, configure, integrate, deploy, and operate SecureKit without reading the source code first.
+This document is the primary reference for the `@securekit/core` npm package. It is written so you can install, configure, integrate, deploy, and operate SecureKit without reading the source code first.
 
 ---
 
@@ -44,7 +44,7 @@ SecureKit addresses these by design:
 
 | Concern | SecureKit behavior |
 | --- | --- |
-| Dependencies | `securekit` has **zero npm runtime dependencies** (Node.js built-ins only). |
+| Dependencies | `@securekit/core` has **zero npm runtime dependencies** (Node.js built-ins only). |
 | Configuration | Validated **at startup**; invalid config throws before you accept traffic. |
 | Execution model | **Compile-time pipeline** — a prebuilt step array, not per-request middleware chaining. |
 | Framework coupling | **Framework-agnostic core** with thin adapters for Express, Fastify, and raw `node:http`. |
@@ -99,7 +99,7 @@ shutdown: kit.destroy()  →  release MemoryStore sweep timers
 ### Install the core package
 
 ```bash
-npm install securekit
+npm install @securekit/core
 ```
 
 ### Install an adapter (recommended)
@@ -107,20 +107,20 @@ npm install securekit
 For Express:
 
 ```bash
-npm install securekit @securekit/express express
+npm install @securekit/core @securekit/express express
 ```
 
 For Fastify:
 
 ```bash
-npm install securekit @securekit/fastify fastify
+npm install @securekit/core @securekit/fastify fastify
 ```
 
 ### Minimal Express example
 
 ```typescript
 import express from "express";
-import { securekit } from "securekit";
+import { securekit } from "@securekit/core";
 import { expressAdapter } from "@securekit/express";
 
 const kit = securekit({
@@ -364,7 +364,7 @@ apiKey: {
 
 ```typescript
 import express from "express";
-import { securekit } from "securekit";
+import { securekit } from "@securekit/core";
 import { expressAdapter } from "@securekit/express";
 
 const kit = securekit({ headers: true, rateLimit: { limit: 200, window: 60_000 } });
@@ -387,7 +387,7 @@ app.get("/api/data", (req, res) => {
 
 ```typescript
 import Fastify from "fastify";
-import { securekit } from "securekit";
+import { securekit } from "@securekit/core";
 import { fastifyPlugin } from "@securekit/fastify";
 
 const kit = securekit({
@@ -437,12 +437,12 @@ Adapter source in `@securekit/express` is the canonical reference implementation
 ### Redis example
 
 ```bash
-npm install securekit @securekit/redis redis
+npm install @securekit/core @securekit/redis redis
 ```
 
 ```typescript
 import { createClient } from "redis";
-import { securekit } from "securekit";
+import { securekit } from "@securekit/core";
 import { RedisStore, adaptRedisClient } from "@securekit/redis";
 
 const client = createClient({ url: process.env.REDIS_URL });
@@ -517,7 +517,7 @@ import {
   RequestLimitError,
   AuthenticationError,
   SecureKitError,
-} from "securekit";
+} from "@securekit/core";
 ```
 
 `ConfigurationError` includes:
@@ -530,7 +530,7 @@ import {
 
 ## Use cryptographic helpers
 
-The `securekit/crypto` entry point provides zero-dependency helpers for your own auth and session code:
+The `@securekit/core/crypto` entry point provides zero-dependency helpers for your own auth and session code:
 
 ```typescript
 import {
@@ -539,7 +539,7 @@ import {
   hmac,
   generateToken,
   generateRequestId,
-} from "securekit/crypto";
+} from "@securekit/core/crypto";
 
 safeCompare(a, b);              // timing-safe comparison
 hash("sha256", data);           // hex-encoded digest
@@ -557,9 +557,9 @@ These utilities share the same no-runtime-deps guarantee as the core package.
 Plugins extend the pipeline at **compile time**. There is no runtime plugin registry or dynamic loading.
 
 ```typescript
-import { securekit, ConfigurationError } from "securekit";
-import type { Plugin } from "securekit/internal";
-import { CONTINUE } from "securekit/internal";
+import { securekit, ConfigurationError } from "@securekit/core";
+import type { Plugin } from "@securekit/core/internal";
+import { CONTINUE } from "@securekit/core/internal";
 
 const requireApiKeyPlugin: Plugin = {
   name: "require-api-key-config",
@@ -579,7 +579,7 @@ const kit = securekit({
 });
 ```
 
-**Caution:** `securekit/internal` is intended for adapter and plugin authors. It is **not** covered by semver stability guarantees.
+**Caution:** `@securekit/core/internal` is intended for adapter and plugin authors. It is **not** covered by semver stability guarantees.
 
 ---
 
@@ -624,8 +624,8 @@ Representative checks include: config validity, headers enabled, body limits pre
 | Import path | Stable | Purpose |
 | --- | --- | --- |
 | `securekit` | Yes | `securekit()`, config types, error classes |
-| `securekit/crypto` | Yes | Cryptographic helpers |
-| `securekit/internal` | **No** | Compiler, `MemoryStore`, adapter contracts, plugins |
+| `@securekit/core/crypto` | Yes | Cryptographic helpers |
+| `@securekit/core/internal` | **No** | Compiler, `MemoryStore`, adapter contracts, plugins |
 
 Public runtime exports from `securekit`:
 

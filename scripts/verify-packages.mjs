@@ -10,7 +10,7 @@ const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const packagesDir = join(repoRoot, "packages");
 
 const PACKAGE_NAMES = [
-  "securekit",
+  "@securekit/core",
   "@securekit/express",
   "@securekit/fastify",
   "@securekit/redis",
@@ -26,7 +26,7 @@ function readJson(path) {
 }
 
 for (const name of PACKAGE_NAMES) {
-  const folder = name === "securekit" ? "core" : name.replace("@securekit/", "");
+  const folder = name === "@securekit/core" ? "core" : name.replace("@securekit/", "");
   const pkgPath = join(packagesDir, folder, "package.json");
   const pkg = readJson(pkgPath);
 
@@ -60,14 +60,14 @@ for (const name of PACKAGE_NAMES) {
     failures.push(`${name}: dist entry missing — run pnpm build`);
   }
 
-  if (name === "securekit") {
+  if (name === "@securekit/core") {
     if (Object.keys(pkg.dependencies ?? {}).length > 0) {
-      failures.push("securekit: must have zero runtime dependencies");
+      failures.push("@securekit/core: must have zero runtime dependencies");
     }
   } else if (name !== "@securekit/cli") {
     const deps = pkg.dependencies ?? {};
-    if (!deps["securekit"]) {
-      failures.push(`${name}: must depend on securekit`);
+    if (!deps["@securekit/core"]) {
+      failures.push(`${name}: must depend on @securekit/core`);
     }
   }
 

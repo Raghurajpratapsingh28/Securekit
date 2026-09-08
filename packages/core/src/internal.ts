@@ -1,8 +1,8 @@
 /**
- * securekit/internal
+ * @securekit/core/internal
  *
  * Unstable adapter, plugin, and compiler contracts. Not covered by semver.
- * Import from securekit/internal only when building adapters or plugins.
+ * Import from @securekit/core/internal only when building adapters or plugins.
  */
 
 export { createSecureKitContext, createSecureKitContextFromHeaders, resetSecureKitState } from "./context/create-context.js";

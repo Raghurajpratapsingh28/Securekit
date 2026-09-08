@@ -1,7 +1,7 @@
 # Configuration reference
 
 ```typescript
-import { securekit } from "securekit";
+import { securekit } from "@securekit/core";
 
 const kit = securekit({
   headers: true,

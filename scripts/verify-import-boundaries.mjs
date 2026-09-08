@@ -49,10 +49,10 @@ function parseImports(source) {
 
 const failures = [];
 
-// securekit must have zero runtime dependencies and no forbidden imports
+// @securekit/core must have zero runtime dependencies and no forbidden imports
 const corePkg = JSON.parse(readFileSync(join(repoRoot, "packages/core/package.json"), "utf8"));
 if (Object.keys(corePkg.dependencies ?? {}).length > 0) {
-  failures.push("securekit must have zero runtime dependencies");
+  failures.push("@securekit/core must have zero runtime dependencies");
 }
 
 for (const file of collectTsFiles(join(repoRoot, "packages/core/src"))) {

@@ -11,7 +11,7 @@ const repoRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const packagesDir = join(repoRoot, "packages");
 
 const PACKAGE_NAMES = [
-  "securekit",
+  "@securekit/core",
   "@securekit/express",
   "@securekit/fastify",
   "@securekit/redis",
@@ -51,7 +51,7 @@ function walk(dir) {
 }
 
 for (const name of PACKAGE_NAMES) {
-  const folder = name === "securekit" ? "core" : name.replace("@securekit/", "");
+  const folder = name === "@securekit/core" ? "core" : name.replace("@securekit/", "");
   const pkgPath = join(packagesDir, folder, "package.json");
   const pkg = JSON.parse(readFileSync(pkgPath, "utf8"));
   const distDir = join(packagesDir, folder, "dist");
@@ -90,8 +90,8 @@ for (const name of PACKAGE_NAMES) {
     }
   }
 
-  if (name === "securekit" && Object.keys(pkg.dependencies ?? {}).length > 0) {
-    failures.push("securekit: runtime dependencies in package.json");
+  if (name === "@securekit/core" && Object.keys(pkg.dependencies ?? {}).length > 0) {
+    failures.push("@securekit/core: runtime dependencies in package.json");
   }
 }
 

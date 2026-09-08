@@ -20,7 +20,7 @@ async function copyPackage(folder, scopePath) {
 }
 
 try {
-  await copyPackage("core", "securekit");
+  await copyPackage("core", "@securekit/core");
   await copyPackage("express", "@securekit/express");
 
   await mkdir(join(consumerDir, "node_modules", "@types"), { recursive: true });
@@ -30,7 +30,7 @@ try {
 
   const expressPkgPath = join(consumerDir, "node_modules", "@securekit", "express", "package.json");
   const expressPkg = JSON.parse(await readFile(expressPkgPath, "utf8"));
-  expressPkg.dependencies["securekit"] = "file:../securekit";
+  expressPkg.dependencies["@securekit/core"] = "file:../securekit";
   await writeFile(expressPkgPath, JSON.stringify(expressPkg, null, 2));
 
   await writeFile(
@@ -40,9 +40,9 @@ try {
 
   await writeFile(
     join(consumerDir, "smoke.mjs"),
-    `import { securekit } from "securekit";
+    `import { securekit } from "@securekit/core";
 import { expressAdapter } from "@securekit/express";
-import { safeCompare } from "securekit/crypto";
+import { safeCompare } from "@securekit/core/crypto";
 
 const kit = securekit({ headers: true, bodyLimit: "1kb" });
 if (typeof kit.handle !== "function") throw new Error("handle missing");
@@ -57,7 +57,7 @@ console.log("consumer smoke ok");
 
   await writeFile(
     join(consumerDir, "types.ts"),
-    `import type { SecureKitConfig, CompiledSecureKit } from "securekit";
+    `import type { SecureKitConfig, CompiledSecureKit } from "@securekit/core";
 
 declare const config: SecureKitConfig;
 declare const kit: CompiledSecureKit;
@@ -87,7 +87,7 @@ declare const kit: CompiledSecureKit;
     { cwd: consumerDir, stdio: "inherit" },
   );
 
-  const deps = execSync("pnpm ls --prod --filter securekit --json", {
+  const deps = execSync("pnpm ls --prod --filter @securekit/core --json", {
     cwd: repoRoot,
     encoding: "utf8",
   });

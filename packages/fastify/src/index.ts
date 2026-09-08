@@ -1,12 +1,12 @@
 import type { FastifyPluginAsync, FastifyReply, FastifyRequest } from "fastify";
 import fp from "fastify-plugin";
-import type { CompiledSecureKit } from "securekit";
+import type { CompiledSecureKit } from "@securekit/core";
 import {
   createSecureKitContext,
   createReadonlyHeaderMap,
   mergeResponseHeaders,
-} from "securekit/internal";
-import type { MutableHeaderWriter, SecureKitState, StepResult } from "securekit/internal";
+} from "@securekit/core/internal";
+import type { MutableHeaderWriter, SecureKitState, StepResult } from "@securekit/core/internal";
 
 export type SecureKitFastifyRequest = FastifyRequest & {
   securekit?: SecureKitState;
@@ -75,4 +75,4 @@ export function fastifyPlugin(kit: CompiledSecureKit): FastifyPluginAsync {
   });
 }
 
-export type { FrameworkAdapterContract } from "securekit/internal";
+export type { FrameworkAdapterContract } from "@securekit/core/internal";

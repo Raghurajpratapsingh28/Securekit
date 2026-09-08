@@ -13,7 +13,7 @@ pnpm add securekit @securekit/context
 ## Usage
 
 ```typescript
-import { securekit } from "securekit";
+import { securekit } from "@securekit/core";
 import { contextPlugin, getRequestContext } from "@securekit/context";
 
 const kit = securekit({

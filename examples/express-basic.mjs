@@ -1,5 +1,5 @@
 import express from "express";
-import { securekit } from "securekit";
+import { securekit } from "@securekit/core";
 import { expressAdapter } from "@securekit/express";
 
 const app = express();

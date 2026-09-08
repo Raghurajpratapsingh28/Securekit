@@ -20,8 +20,8 @@ Status values: **COMPLETE** | **DEFERRED** | **NOT COMPLETE**
 | API key header extractor default | `api-key/extract.ts` | ADR-003, `api-key.test.ts` | **COMPLETE** |
 | Plugin system + ordering | `plugins/validate.ts` | `plugins.test.ts` | **COMPLETE** |
 | Typed error hierarchy | `errors/` | `errors.test.ts` | **COMPLETE** |
-| `securekit/crypto` subpath | `crypto/index.ts` | `public-api.test.ts`, API snapshot | **COMPLETE** |
-| `securekit/internal` unstable surface | `internal.ts` | `public-api.test.ts`, deprecation policy | **COMPLETE** |
+| `@securekit/core/crypto` subpath | `crypto/index.ts` | `public-api.test.ts`, API snapshot | **COMPLETE** |
+| `@securekit/core/internal` unstable surface | `internal.ts` | `public-api.test.ts`, deprecation policy | **COMPLETE** |
 | Express adapter | `@securekit/express` | `adapter.test.ts`, examples | **COMPLETE** |
 | Fastify adapter | `@securekit/fastify` | `adapter.test.ts` | **COMPLETE** |
 | Redis optional store | `@securekit/redis` | `store-conformance.test.ts`, redis-failures | **COMPLETE** |
