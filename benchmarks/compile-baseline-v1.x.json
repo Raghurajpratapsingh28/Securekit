@@ -1,0 +1,19 @@
+{
+  "label": "SecureKit compile-time baseline (Phase 10 measured, 2026-09-08)",
+  "environment": {
+    "nodeVersion": "v22.22.2",
+    "iterationsPerScenario": 50
+  },
+  "results": [
+    { "name": "minimal", "compileDestroyAvgMs": 0.011, "stepCount": 1 },
+    { "name": "default", "compileDestroyAvgMs": 0.001, "stepCount": 2 },
+    { "name": "full-sync", "compileDestroyAvgMs": 0.015, "stepCount": 8 },
+    { "name": "many-plugins", "compileDestroyAvgMs": 0.006, "stepCount": 11 },
+    { "name": "large-cors-list", "compileDestroyAvgMs": 0.11, "stepCount": 2 },
+    { "name": "async-store", "compileDestroyAvgMs": 0.003, "stepCount": 2, "isAsync": true }
+  ],
+  "guidance": {
+    "maxCompileDestroyAvgMs": 50,
+    "note": "large-cors-list (500 origins) is the slowest expected v1.x config shape."
+  }
+}

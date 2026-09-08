@@ -1,0 +1,35 @@
+{
+  "name": "@securekit/express",
+  "version": "1.0.0",
+  "description": "Express adapter for SecureKit — thin translation layer over securekit.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "test": "pnpm run build && node --test tests/**/*.test.ts"
+  },
+  "dependencies": {
+    "securekit": "workspace:*"
+  },
+  "peerDependencies": {
+    "express": "^4.21.0 || ^5.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.5.0",
+    "@types/supertest": "^6.0.2",
+    "express": "^4.21.0",
+    "supertest": "^7.0.0",
+    "typescript": "^5.6.2"
+  }
+}

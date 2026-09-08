@@ -1,0 +1,27 @@
+{
+  "label": "SecureKit v1.x reference baseline (Phase 10 measured, 2026-09-08)",
+  "environment": {
+    "nodeVersion": "v22.22.2",
+    "platform": "darwin",
+    "durationSec": 10,
+    "connections": 50,
+    "note": "Co-located client/server on macOS. Use for trend comparison only — not a cross-machine SLA."
+  },
+  "results": {
+    "bare-node-http": { "requestsPerSec": 49312, "latencyP50Ms": 0, "latencyP95Ms": 1.9, "latencyP99Ms": 2 },
+    "structural-only": { "requestsPerSec": 47904, "latencyP50Ms": 0, "latencyP95Ms": 1, "latencyP99Ms": 2 },
+    "headers-only": { "requestsPerSec": 42794, "latencyP50Ms": 1, "latencyP95Ms": 0.95, "latencyP99Ms": 1 },
+    "cors-only": { "requestsPerSec": 45261, "latencyP50Ms": 1, "latencyP95Ms": 0.95, "latencyP99Ms": 1 },
+    "body-limit-only": { "requestsPerSec": 48863, "latencyP50Ms": 0, "latencyP95Ms": 0.95, "latencyP99Ms": 1 },
+    "rate-limit-memory": { "requestsPerSec": 25358, "latencyP50Ms": 1, "latencyP95Ms": 1.9, "latencyP99Ms": 2 },
+    "full-config": { "requestsPerSec": 23102, "latencyP50Ms": 2, "latencyP95Ms": 2.85, "latencyP99Ms": 3 },
+    "full-config-api-key": { "requestsPerSec": 23583, "latencyP50Ms": 2, "latencyP95Ms": 1.9, "latencyP99Ms": 2 },
+    "rate-limit-async-memory": { "requestsPerSec": 25297, "latencyP50Ms": 1, "latencyP95Ms": 1.9, "latencyP99Ms": 2 }
+  },
+  "tolerance": {
+    "requestsPerSecMinRatio": 0.75,
+    "latencyP99MaxRatio": 1.35,
+    "latencyP99MaxDeltaMs": 1,
+    "comment": "Allow 25% throughput variance; p99 uses max(ratio, absolute +1ms delta) for sub-ms co-located noise."
+  }
+}

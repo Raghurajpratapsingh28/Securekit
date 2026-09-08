@@ -1,0 +1,163 @@
+{
+  "generatedAt": "2026-09-08T19:54:52.043Z",
+  "nodeVersion": "v22.22.2",
+  "platform": "darwin",
+  "durationSec": 2,
+  "connections": 10,
+  "smoke": true,
+  "results": [
+    {
+      "name": "bare-node-http",
+      "requestsPerSec": 48512,
+      "latencyAvgMs": 0.01,
+      "latencyP50Ms": 0,
+      "latencyP95Ms": 0,
+      "latencyP99Ms": 0,
+      "throughputMbPerSec": 5.736328125,
+      "benchElapsedMs": 2013.3340830000002,
+      "cpuUserMicros": 1531743,
+      "cpuSystemMicros": 646716,
+      "memory": {
+        "heapUsedDeltaMb": 1.3757171630859375,
+        "rssDeltaMb": 14.65625,
+        "heapUsedMb": 13.001617431640625
+      }
+    },
+    {
+      "name": "structural-only",
+      "requestsPerSec": 46128,
+      "latencyAvgMs": 0.01,
+      "latencyP50Ms": 0,
+      "latencyP95Ms": 0,
+      "latencyP99Ms": 0,
+      "throughputMbPerSec": 5.455078125,
+      "benchElapsedMs": 2002.7703339999998,
+      "cpuUserMicros": 1532427,
+      "cpuSystemMicros": 589193,
+      "memory": {
+        "heapUsedDeltaMb": 0.44403839111328125,
+        "rssDeltaMb": 3.15625,
+        "heapUsedMb": 13.502861022949219
+      }
+    },
+    {
+      "name": "headers-only",
+      "requestsPerSec": 40880,
+      "latencyAvgMs": 0.01,
+      "latencyP50Ms": 0,
+      "latencyP95Ms": 0,
+      "latencyP99Ms": 0,
+      "throughputMbPerSec": 9.19921875,
+      "benchElapsedMs": 2002.7327500000001,
+      "cpuUserMicros": 1443400,
+      "cpuSystemMicros": 547857,
+      "memory": {
+        "heapUsedDeltaMb": 4.9160003662109375,
+        "rssDeltaMb": -8.484375,
+        "heapUsedMb": 18.434104919433594
+      }
+    },
+    {
+      "name": "cors-only",
+      "requestsPerSec": 42944,
+      "latencyAvgMs": 0.01,
+      "latencyP50Ms": 0,
+      "latencyP95Ms": 0,
+      "latencyP99Ms": 0,
+      "throughputMbPerSec": 7.126953125,
+      "benchElapsedMs": 2021.2365830000008,
+      "cpuUserMicros": 1415026,
+      "cpuSystemMicros": 560662,
+      "memory": {
+        "heapUsedDeltaMb": -2.1846542358398438,
+        "rssDeltaMb": -1.265625,
+        "heapUsedMb": 16.26885986328125
+      }
+    },
+    {
+      "name": "body-limit-only",
+      "requestsPerSec": 45920,
+      "latencyAvgMs": 0.01,
+      "latencyP50Ms": 0,
+      "latencyP95Ms": 0,
+      "latencyP99Ms": 0,
+      "throughputMbPerSec": 5.431640625,
+      "benchElapsedMs": 2015.7799169999998,
+      "cpuUserMicros": 1396746,
+      "cpuSystemMicros": 587370,
+      "memory": {
+        "heapUsedDeltaMb": 8.034538269042969,
+        "rssDeltaMb": 16.265625,
+        "heapUsedMb": 24.3314208984375
+      }
+    },
+    {
+      "name": "rate-limit-memory",
+      "requestsPerSec": 25776,
+      "latencyAvgMs": 0.01,
+      "latencyP50Ms": 0,
+      "latencyP95Ms": 0,
+      "latencyP99Ms": 0,
+      "throughputMbPerSec": 6.091796875,
+      "benchElapsedMs": 2001.54025,
+      "cpuUserMicros": 1635578,
+      "cpuSystemMicros": 381629,
+      "memory": {
+        "heapUsedDeltaMb": -0.30280303955078125,
+        "rssDeltaMb": 2.453125,
+        "heapUsedMb": 24.05370330810547
+      }
+    },
+    {
+      "name": "full-config",
+      "requestsPerSec": 23488,
+      "latencyAvgMs": 0.02,
+      "latencyP50Ms": 0,
+      "latencyP95Ms": 0,
+      "latencyP99Ms": 0,
+      "throughputMbPerSec": 7.4326171875,
+      "benchElapsedMs": 2001.883249999999,
+      "cpuUserMicros": 1639304,
+      "cpuSystemMicros": 366721,
+      "memory": {
+        "heapUsedDeltaMb": 4.218017578125,
+        "rssDeltaMb": 1.546875,
+        "heapUsedMb": 28.292221069335938
+      }
+    },
+    {
+      "name": "full-config-api-key",
+      "requestsPerSec": 24088,
+      "latencyAvgMs": 0.01,
+      "latencyP50Ms": 0,
+      "latencyP95Ms": 0,
+      "latencyP99Ms": 0,
+      "throughputMbPerSec": 7.6083984375,
+      "benchElapsedMs": 2002.2664160000004,
+      "cpuUserMicros": 1636084,
+      "cpuSystemMicros": 362085,
+      "memory": {
+        "heapUsedDeltaMb": -9.489509582519531,
+        "rssDeltaMb": 1.3125,
+        "heapUsedMb": 18.824485778808594
+      }
+    },
+    {
+      "name": "rate-limit-async-memory",
+      "requestsPerSec": 26208,
+      "latencyAvgMs": 0.01,
+      "latencyP50Ms": 0,
+      "latencyP95Ms": 0,
+      "latencyP99Ms": 0,
+      "throughputMbPerSec": 6.19921875,
+      "benchElapsedMs": 2002.575084,
+      "cpuUserMicros": 1605547,
+      "cpuSystemMicros": 374366,
+      "memory": {
+        "heapUsedDeltaMb": -0.09881591796875,
+        "rssDeltaMb": 1.390625,
+        "heapUsedMb": 18.752029418945312
+      }
+    }
+  ]
+}

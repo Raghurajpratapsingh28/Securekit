@@ -1,0 +1,105 @@
+{
+  "version": "1.0.0",
+  "packages": {
+    "securekit": [
+      "AuthenticationError",
+      "ConfigurationError",
+      "CorsError",
+      "RateLimitError",
+      "RequestLimitError",
+      "SecureKitError",
+      "securekit"
+    ],
+    "securekit/crypto": [
+      "generateRequestId",
+      "generateToken",
+      "hash",
+      "hmac",
+      "safeCompare"
+    ],
+    "securekit/internal": [
+      "AuthenticationError",
+      "CONTINUE",
+      "ConfigurationError",
+      "CorsError",
+      "MemoryStore",
+      "RateLimitError",
+      "RequestLimitError",
+      "SecureKitError",
+      "compileApiKey",
+      "compileApiKeyExtractStep",
+      "compileApiKeySteps",
+      "compileCompiledArtifacts",
+      "compileConfig",
+      "compileCors",
+      "compileHeaderBlocks",
+      "compileHeadersSteps",
+      "compilePipelineSteps",
+      "compilePluginSteps",
+      "compileRateLimit",
+      "compileRateLimitSteps",
+      "compileRequestId",
+      "compileRequestIdSteps",
+      "compileRequestLimitSteps",
+      "compileRequestLimitStreamStep",
+      "compileSizeLimits",
+      "constantTimeKeyCompare",
+      "consumeMonitoredBody",
+      "createHeaderWriter",
+      "createReadonlyHeaderMap",
+      "createRunner",
+      "createSecureKitContext",
+      "createSecureKitContextFromHeaders",
+      "destroyCompiledConfig",
+      "destroyCompiledRateLimit",
+      "digestApiKey",
+      "evaluateSlidingWindowCounter",
+      "generateRequestId",
+      "generateToken",
+      "hash",
+      "hmac",
+      "isAsyncStore",
+      "isContinueResult",
+      "isHeadersEnabled",
+      "mergeResponseHeaders",
+      "normalizeConfig",
+      "normalizeSlidingWindowRecord",
+      "readResponseHeaders",
+      "resetSecureKitState",
+      "respond",
+      "safeCompare",
+      "validatePluginList"
+    ],
+    "@securekit/express": [
+      "applyExpressResult",
+      "expressAdapter",
+      "toExpressContext"
+    ],
+    "@securekit/fastify": [
+      "applyFastifyResult",
+      "fastifyPlugin",
+      "toFastifyContext"
+    ],
+    "@securekit/redis": [
+      "RedisStore",
+      "adaptRedisClient"
+    ],
+    "@securekit/context": [
+      "contextPlugin",
+      "enterRequestContext",
+      "getRequestContext",
+      "getSecureKitState",
+      "requestContext"
+    ],
+    "@securekit/cli": [
+      "auditConfiguration",
+      "cleanupAuditCompiled",
+      "detectDeploymentHints",
+      "renderHumanReport",
+      "renderJsonReport",
+      "runAuditChecks",
+      "runAuditCli",
+      "scoreAuditChecks"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "@securekit/context",
+  "version": "1.0.0",
+  "description": "Opt-in AsyncLocalStorage request-context plugin for SecureKit.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "test": "pnpm run build && node --test tests/**/*.test.ts"
+  },
+  "dependencies": {
+    "securekit": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "typescript": "^5.6.2"
+  }
+}

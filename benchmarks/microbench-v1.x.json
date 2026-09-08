@@ -1,0 +1,70 @@
+
+> -monorepo@1.0.0 benchmark:micro /Users/raghurajpratap/Desktop/node_package
+> pnpm run build && node benchmarks/microbench.mjs
+
+
+> -monorepo@1.0.0 build /Users/raghurajpratap/Desktop/node_package
+> tsc -b
+
+{
+  "label": "Phase 11 hot-path microbenchmark (co-located, not a SLA)",
+  "generatedAt": "2026-09-08T18:48:50.570Z",
+  "nodeVersion": "v22.22.2",
+  "iterationsDefault": 5000,
+  "results": [
+    {
+      "name": "context-create",
+      "iterations": 5000,
+      "totalMs": 3.653,
+      "perOpUs": 0.731
+    },
+    {
+      "name": "structural-continue",
+      "iterations": 1000,
+      "totalMs": 0.784,
+      "perOpUs": 0.784
+    },
+    {
+      "name": "headers-continue",
+      "iterations": 1000,
+      "totalMs": 1.347,
+      "perOpUs": 1.347
+    },
+    {
+      "name": "cors-reject",
+      "iterations": 1000,
+      "totalMs": 4.169,
+      "perOpUs": 4.169
+    },
+    {
+      "name": "body-limit-continue",
+      "iterations": 1000,
+      "totalMs": 0.804,
+      "perOpUs": 0.804
+    },
+    {
+      "name": "request-id-continue",
+      "iterations": 1000,
+      "totalMs": 1.4,
+      "perOpUs": 1.4
+    },
+    {
+      "name": "rate-limit-continue",
+      "iterations": 1000,
+      "totalMs": 1.271,
+      "perOpUs": 1.271
+    },
+    {
+      "name": "api-key-continue",
+      "iterations": 1000,
+      "totalMs": 1.444,
+      "perOpUs": 1.444
+    },
+    {
+      "name": "full-sync-continue",
+      "iterations": 1000,
+      "totalMs": 2.767,
+      "perOpUs": 2.767
+    }
+  ]
+}

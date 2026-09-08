@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.4.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm verify:deps
+      - run: pnpm verify:import-boundaries
+      - run: pnpm verify:packages
+      - run: pnpm lint:secrets
+      - run: pnpm verify:api
+      - run: pnpm verify:packaging
+      - run: pnpm verify:examples
+      - run: pnpm test:cross
+      - run: pnpm benchmark:smoke

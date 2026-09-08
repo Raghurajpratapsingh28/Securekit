@@ -1,0 +1,47 @@
+{
+  "name": "securekit-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SecureKit — a zero-runtime-dependency security toolkit for Node.js APIs (monorepo root).",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc -b",
+    "clean": "tsc -b --clean",
+    "test": "pnpm -r --if-present test && pnpm test:cross",
+    "test:cross": "pnpm run build && node --test tests/**/*.test.ts",
+    "verify:packaging": "pnpm run build && node scripts/verify-packaging.mjs",
+    "verify:packages": "pnpm run build && node scripts/verify-packages.mjs",
+    "verify:examples": "node scripts/verify-examples.mjs",
+    "verify:release": "node scripts/verify-release.mjs",
+    "benchmark": "node benchmarks/run.mjs",
+    "benchmark:smoke": "node benchmarks/run.mjs --smoke",
+    "benchmark:compare": "node scripts/compare-benchmark.mjs",
+    "benchmark:micro": "pnpm run build && node benchmarks/microbench.mjs",
+    "measure:compile": "pnpm run build && node scripts/measure-compile.mjs",
+    "verify:zero-deps": "pnpm run build && node scripts/verify-zero-deps.mjs",
+    "verify:artifacts": "pnpm run build && node scripts/verify-artifacts.mjs",
+    "verify:clean-room": "pnpm run build && node scripts/clean-room-consumer.mjs",
+    "verify:certification": "pnpm run build && pnpm verify:zero-deps && pnpm verify:artifacts && pnpm verify:clean-room",
+    "smoke:test": "pnpm run build && node scripts/smoke-test.mjs",
+    "verify:deps": "pnpm ls --prod --filter securekit --json",
+    "verify:import-boundaries": "node scripts/verify-import-boundaries.mjs",
+    "verify:api": "pnpm --filter securekit run build && node --test packages/core/tests/public-api.test.ts tests/api-snapshot.test.ts",
+    "lint:secrets": "node scripts/verify-secret-comparisons.mjs"
+  },
+  "devDependencies": {
+    "securekit": "workspace:*",
+    "@securekit/express": "workspace:*",
+    "@securekit/fastify": "workspace:*",
+    "@types/node": "^22.5.0",
+    "autocannon": "^7.15.0",
+    "express": "^4.21.0",
+    "fastify": "^4.28.0",
+    "supertest": "^7.0.0",
+    "typescript": "^5.6.2"
+  },
+  "packageManager": "pnpm@9.4.0"
+}

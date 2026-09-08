@@ -1,0 +1,33 @@
+{
+  "name": "@securekit/fastify",
+  "version": "1.0.0",
+  "description": "Fastify adapter for SecureKit — thin translation layer over securekit.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "test": "pnpm run build && node --test tests/**/*.test.ts"
+  },
+  "dependencies": {
+    "securekit": "workspace:*",
+    "fastify-plugin": "^4.5.1"
+  },
+  "peerDependencies": {
+    "fastify": "^4.28.0 || ^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "fastify": "^4.28.0",
+    "typescript": "^5.6.2"
+  }
+}
