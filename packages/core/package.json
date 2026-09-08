@@ -4,6 +4,24 @@
   "description": "Zero-runtime-dependency security toolkit core for Node.js APIs ? Config Compiler, Pipeline Runner, SecureKitContext, and error architecture.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raghurajpratapsingh28/Securekit.git"
+  },
+  "bugs": "https://github.com/Raghurajpratapsingh28/Securekit/issues",
+  "homepage": "https://github.com/Raghurajpratapsingh28/Securekit#readme",
+  "keywords": [
+    "security",
+    "cors",
+    "rate-limit",
+    "helmet",
+    "nodejs",
+    "express",
+    "middleware",
+    "api-key",
+    "headers",
+    "securekit"
+  ],
   "engines": {
     "node": ">=18"
   },
