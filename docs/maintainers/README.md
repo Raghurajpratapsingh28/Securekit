@@ -16,9 +16,9 @@ The core runs on every request. Third-party packages in the hot path increase su
 
 Enforced by `pnpm verify:deps` and `scripts/verify-import-boundaries.mjs`.
 
-### `@securekit/core/internal`
+### `@backend-master/securekit/internal`
 
-Adapters and plugins import compiler contracts from `@securekit/core/internal`. This surface is explicitly unstable—breaking changes may ship in minor or patch releases. Semver guarantees apply to the main entry and `@securekit/core/crypto` only.
+Adapters and plugins import compiler contracts from `@backend-master/securekit/internal`. This surface is explicitly unstable—breaking changes may ship in minor or patch releases. Semver guarantees apply to the main entry and `@backend-master/securekit/crypto` only.
 
 ### Observability
 
@@ -40,10 +40,10 @@ Store failures and plugin compile errors throw at initialization. Runtime plugin
 | Package | May import | Must not import |
 | --- | --- | --- |
 | `securekit` | Node.js built-ins | express, fastify, redis, other `@securekit/*` |
-| `@securekit/express` | @securekit/core/internal, express (peer) | fastify |
-| `@securekit/fastify` | @securekit/core/internal, fastify-plugin | express |
-| `@securekit/redis` | @securekit/core/internal | frameworks |
-| `@securekit/context` | @securekit/core/internal | frameworks |
+| `@securekit/express` | @backend-master/securekit/internal, express (peer) | fastify |
+| `@securekit/fastify` | @backend-master/securekit/internal, fastify-plugin | express |
+| `@securekit/redis` | @backend-master/securekit/internal | frameworks |
+| `@securekit/context` | @backend-master/securekit/internal | frameworks |
 | `@securekit/cli` | core (public) | frameworks |
 
 ## Store contract

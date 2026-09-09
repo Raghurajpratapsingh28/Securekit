@@ -8,7 +8,7 @@ importers:
 
   .:
     devDependencies:
-      '@securekit/core':
+      '@backend-master/securekit':
         specifier: workspace:*
         version: link:packages/core
       '@securekit/express':
@@ -38,7 +38,7 @@ importers:
 
   packages/cli:
     dependencies:
-      '@securekit/core':
+      '@backend-master/securekit':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -51,7 +51,7 @@ importers:
 
   packages/context:
     dependencies:
-      '@securekit/core':
+      '@backend-master/securekit':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -73,7 +73,7 @@ importers:
 
   packages/express:
     dependencies:
-      '@securekit/core':
+      '@backend-master/securekit':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -98,7 +98,7 @@ importers:
 
   packages/fastify:
     dependencies:
-      '@securekit/core':
+      '@backend-master/securekit':
         specifier: workspace:*
         version: link:../core
       fastify-plugin:
@@ -117,7 +117,7 @@ importers:
 
   packages/redis:
     dependencies:
-      '@securekit/core':
+      '@backend-master/securekit':
         specifier: workspace:*
         version: link:../core
       redis:

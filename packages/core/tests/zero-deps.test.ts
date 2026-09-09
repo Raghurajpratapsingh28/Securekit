@@ -19,7 +19,7 @@ describe("zero runtime dependency enforcement", () => {
 
     const output = execFileSync(
       "pnpm",
-      ["ls", "--prod", "--filter", "@securekit/core", "--json"],
+      ["ls", "--prod", "--filter", "@backend-master/securekit", "--json"],
       {
         cwd: repoRoot,
         encoding: "utf8",
@@ -33,7 +33,7 @@ describe("zero runtime dependency enforcement", () => {
     }>;
 
     assert.equal(packages.length, 1);
-    assert.equal(packages[0]?.name, "@securekit/core");
+    assert.equal(packages[0]?.name, "@backend-master/securekit");
     assert.deepEqual(packages[0]?.dependencies ?? {}, {});
   });
 });

@@ -83,7 +83,7 @@ describe("public API surface", () => {
     assert.deepEqual(runtimeExports, [...EXPECTED_PUBLIC_EXPORTS].sort());
   });
 
-  it("exports crypto helpers only from @securekit/core/crypto", () => {
+  it("exports crypto helpers only from @backend-master/securekit/crypto", () => {
     const runtimeExports = Object.keys(cryptoApi).sort();
     assert.deepEqual(runtimeExports, [...EXPECTED_CRYPTO_EXPORTS].sort());
     assert.equal("constantTimeKeyCompare" in cryptoApi, false);

@@ -1,12 +1,12 @@
 import type { IncomingMessage } from "node:http";
 import type { Request, Response } from "express";
-import type { CompiledSecureKit } from "@securekit/core";
+import type { CompiledSecureKit } from "@backend-master/securekit";
 import {
   createSecureKitContext,
   createReadonlyHeaderMap,
   mergeResponseHeaders,
-} from "@securekit/core/internal";
-import type { MutableHeaderWriter, SecureKitState, StepResult } from "@securekit/core/internal";
+} from "@backend-master/securekit/internal";
+import type { MutableHeaderWriter, SecureKitState, StepResult } from "@backend-master/securekit/internal";
 
 export type SecureKitExpressRequest = Request & {
   securekit?: SecureKitState;
@@ -75,4 +75,4 @@ export function expressAdapter(kit: CompiledSecureKit) {
   };
 }
 
-export type { FrameworkAdapterContract } from "@securekit/core/internal";
+export type { FrameworkAdapterContract } from "@backend-master/securekit/internal";

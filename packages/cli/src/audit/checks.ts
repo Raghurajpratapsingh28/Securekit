@@ -1,6 +1,6 @@
-import { ConfigurationError } from "@securekit/core";
-import { compileConfig, destroyCompiledConfig, isHeadersEnabled } from "@securekit/core/internal";
-import type { SecureKitConfig } from "@securekit/core";
+import { ConfigurationError } from "@backend-master/securekit";
+import { compileConfig, destroyCompiledConfig, isHeadersEnabled } from "@backend-master/securekit/internal";
+import type { SecureKitConfig } from "@backend-master/securekit";
 import type { DeploymentHints, AuditCheck } from "./types.js";
 
 const WEIGHT_PASS = 10;

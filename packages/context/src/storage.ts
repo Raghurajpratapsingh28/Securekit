@@ -1,5 +1,5 @@
 import { AsyncLocalStorage } from "node:async_hooks";
-import type { SecureKitContext, SecureKitState } from "@securekit/core/internal";
+import type { SecureKitContext, SecureKitState } from "@backend-master/securekit/internal";
 
 const requestContext = new AsyncLocalStorage<SecureKitContext>();
 

@@ -14,7 +14,7 @@ pnpm add securekit @securekit/express express
 
 ```typescript
 import express from "express";
-import { securekit } from "@securekit/core";
+import { securekit } from "@backend-master/securekit";
 import { expressAdapter } from "@securekit/express";
 
 const kit = securekit({

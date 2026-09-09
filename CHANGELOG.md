@@ -29,8 +29,8 @@ First stable release. Public API is frozen; see `api-snapshots/v1.0.0.json` and 
 
 - **`securekit`** — compile-time security pipeline with zero runtime npm dependencies
   - Security headers, CORS, rate limiting (sliding-window + MemoryStore), request/body limits, request ID, API key validation, plugin hooks
-  - `@securekit/core/crypto` subpath: `safeCompare`, `hash`, `hmac`, `generateToken`, `generateRequestId`
-  - `@securekit/core/internal` subpath for adapter/plugin authors (unstable)
+  - `@backend-master/securekit/crypto` subpath: `safeCompare`, `hash`, `hmac`, `generateToken`, `generateRequestId`
+  - `@backend-master/securekit/internal` subpath for adapter/plugin authors (unstable)
 - **`@securekit/express`** — Express middleware adapter
 - **`@securekit/fastify`** — Fastify plugin adapter
 - **`@securekit/redis`** — optional Redis-backed rate-limit store
@@ -68,6 +68,6 @@ See [docs/prd-compliance-matrix.md](docs/prd-compliance-matrix.md) for the full 
 
 ### Migration from 0.x
 
-Pre-1.0 releases had no stability guarantee. v1.0 locks exports tested in `tests/api-snapshot.test.ts`. Import compiler internals only from `@securekit/core/internal`.
+Pre-1.0 releases had no stability guarantee. v1.0 locks exports tested in `tests/api-snapshot.test.ts`. Import compiler internals only from `@backend-master/securekit/internal`.
 
 [1.0.0]: https://github.com/securekit/securekit/releases/tag/v1.0.0

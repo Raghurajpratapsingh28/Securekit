@@ -4,7 +4,7 @@ import { renderHumanReport, renderJsonReport } from "./audit/render.js";
 import { scoreAuditChecks } from "./audit/score.js";
 import type { AuditReport } from "./audit/types.js";
 import { loadConfigFromFile, parseInlineConfigJson } from "./load-config.js";
-import type { SecureKitConfig } from "@securekit/core";
+import type { SecureKitConfig } from "@backend-master/securekit";
 
 export interface AuditOptions {
   readonly config?: SecureKitConfig;

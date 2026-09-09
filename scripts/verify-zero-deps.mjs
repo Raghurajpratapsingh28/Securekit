@@ -101,7 +101,7 @@ for (const file of collectJsFiles(join(coreRoot, "dist"))) {
   }
 }
 
-const lsOutput = execSync("pnpm ls --prod --filter @securekit/core --json", {
+const lsOutput = execSync("pnpm ls --prod --filter @backend-master/securekit --json", {
   cwd: repoRoot,
   encoding: "utf8",
 });

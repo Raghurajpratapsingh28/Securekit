@@ -19,7 +19,7 @@ async function copyPackage(folder, scopePath) {
 }
 
 try {
-  await copyPackage("core", "@securekit/core");
+  await copyPackage("core", "@backend-master/securekit");
   for (const pkg of ["express", "cli"]) {
     await copyPackage(pkg, `@securekit/${pkg}`);
   }
@@ -32,7 +32,7 @@ try {
   for (const pkg of ["express", "cli"]) {
     const pkgJsonPath = join(consumerDir, "node_modules", "@securekit", pkg, "package.json");
     const pkgJson = JSON.parse(await readFile(pkgJsonPath, "utf8"));
-    pkgJson.dependencies = { ...(pkgJson.dependencies ?? {}), "@securekit/core": "file:../core" };
+    pkgJson.dependencies = { ...(pkgJson.dependencies ?? {}), "@backend-master/securekit": "file:../core" };
     await writeFile(pkgJsonPath, JSON.stringify(pkgJson, null, 2));
   }
 
@@ -43,7 +43,7 @@ try {
 
   await writeFile(
     join(consumerDir, "workflow.mjs"),
-    `import { securekit } from "@securekit/core";
+    `import { securekit } from "@backend-master/securekit";
 import { expressAdapter } from "@securekit/express";
 import { auditConfiguration } from "@securekit/cli";
 

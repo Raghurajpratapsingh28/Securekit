@@ -28,7 +28,7 @@ The compile-time pipeline architecture from Phases 1—9 remains sound for v1.x 
 - No generic middleware dispatch or plugin registry at request time
 - `securekit` — **zero runtime dependencies** (CI enforced)
 - Public API frozen via `api-snapshots/v1.0.0.json`
-- Internal surface isolated at `@securekit/core/internal`
+- Internal surface isolated at `@backend-master/securekit/internal`
 
 ## Recommended v1.x extension pattern
 

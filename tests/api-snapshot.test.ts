@@ -22,9 +22,9 @@ const snapshot = JSON.parse(
 };
 
 const RUNTIME_MODULES: Record<string, Record<string, unknown>> = {
-  "@securekit/core": core,
-  "@securekit/core/crypto": crypto,
-  "@securekit/core/internal": internal,
+  "@backend-master/securekit": core,
+  "@backend-master/securekit/crypto": crypto,
+  "@backend-master/securekit/internal": internal,
   "@securekit/express": express,
   "@securekit/fastify": fastify,
   "@securekit/redis": redis,

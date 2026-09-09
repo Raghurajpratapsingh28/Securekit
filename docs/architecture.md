@@ -29,8 +29,8 @@ Core never imports framework or Redis modules. Adapters translate framework requ
 ## Public vs internal API
 
 - **Public:** `securekit()`, config types, errors — see [modules/core.md](modules/core.md)
-- **Internal:** compiler, `MemoryStore`, `Plugin`, adapter helpers — `@securekit/core/internal`
-- **Crypto:** `@securekit/core/crypto` for tree-shakeable helpers
+- **Internal:** compiler, `MemoryStore`, `Plugin`, adapter helpers — `@backend-master/securekit/internal`
+- **Crypto:** `@backend-master/securekit/crypto` for tree-shakeable helpers
 
 ## Compile-time vs request-time
 

@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
-import type { SecureKitConfig } from "@securekit/core";
+import type { SecureKitConfig } from "@backend-master/securekit";
 
 export async function loadConfigFromFile(path: string): Promise<SecureKitConfig | undefined> {
   const source = await readFile(path, "utf8");

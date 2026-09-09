@@ -43,10 +43,10 @@ No bundled exporter; no logging dependency. Event payloads never include raw API
 ## Public API (v1.0)
 
 ```typescript
-import { securekit, ConfigurationError, CorsError } from "@securekit/core";
-import { hash, safeCompare } from "@securekit/core/crypto";
+import { securekit, ConfigurationError, CorsError } from "@backend-master/securekit";
+import { hash, safeCompare } from "@backend-master/securekit/crypto";
 ```
 
 Runtime exports: `securekit`, six error classes. Types: `SecureKitConfig`, `CompiledSecureKit`, config sub-types.
 
-Internal (`@securekit/core/internal`): `MemoryStore`, `Plugin`, compiler, adapter helpers — **unstable**.
+Internal (`@backend-master/securekit/internal`): `MemoryStore`, `Plugin`, compiler, adapter helpers — **unstable**.

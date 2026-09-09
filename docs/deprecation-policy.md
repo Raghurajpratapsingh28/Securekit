@@ -16,11 +16,11 @@ Before removing or breaking a documented public API:
 2. Emit a runtime `process.emitWarning` where practical (dev-only paths)
 3. Remove only in the next **major** release
 
-## Internal API (`@securekit/core/internal`)
+## Internal API (`@backend-master/securekit/internal`)
 
-The `@securekit/core/internal` subpath is **explicitly unstable** (PRD ��13). It is for adapter and plugin authors only. Breaking changes may ship in minor or patch releases without a deprecation window.
+The `@backend-master/securekit/internal` subpath is **explicitly unstable** (PRD ��13). It is for adapter and plugin authors only. Breaking changes may ship in minor or patch releases without a deprecation window.
 
-## Crypto subpath (`@securekit/core/crypto`)
+## Crypto subpath (`@backend-master/securekit/crypto`)
 
 Tree-shakeable helpers (`safeCompare`, `hash`, `hmac`, `generateToken`, `generateRequestId`) follow the same semver rules as the main public entry.
 

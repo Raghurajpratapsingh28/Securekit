@@ -1,5 +1,5 @@
 {
-  "name": "@securekit/core",
+  "name": "@backend-master/securekit",
   "version": "1.0.0",
   "description": "Zero-runtime-dependency security toolkit core for Node.js APIs ? Config Compiler, Pipeline Runner, SecureKitContext, and error architecture.",
   "publishConfig": {

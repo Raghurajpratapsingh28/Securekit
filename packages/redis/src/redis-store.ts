@@ -1,5 +1,5 @@
-import type { RateLimitRecord, Store } from "@securekit/core/internal";
-import { normalizeSlidingWindowRecord } from "@securekit/core/internal";
+import type { RateLimitRecord, Store } from "@backend-master/securekit/internal";
+import { normalizeSlidingWindowRecord } from "@backend-master/securekit/internal";
 import type { RedisHashClient, RedisStoreOptions } from "./types.js";
 
 function parseRecord(

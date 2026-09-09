@@ -36,7 +36,7 @@ When reviewing or changing code, treat these as high sensitivity:
 | Rate limit key derivation | Limit bypass via spoofed IP or key material |
 | Configuration validation | Prototype pollution, type confusion |
 | Error messages / CLI output | Secret or key material in logs |
-| `@securekit/core/internal` | Adapter mistakes affecting security behavior |
+| `@backend-master/securekit/internal` | Adapter mistakes affecting security behavior |
 
 ## Expectations for fixes
 
