@@ -1,6 +1,5 @@
 # SecureKit
-[![NPM Downloads](https://img.shields.io/npm/dt/securityaudit-cli.svg?style=flat-square)](https://www.npmjs.com/package/@backend-master/securekit)
-
+[![npm downloads](https://img.shields.io/npm/dt/@backend-master/securekit.svg?style=flat-square)](https://www.npmjs.com/package/@backend-master/securekit)
 A zero-runtime-dependency security toolkit for Node.js HTTP APIs.
 
 SecureKit combines security headers, CORS, rate limiting, request-size limits, API-key authentication, and request IDs in a single compile-time pipeline. Configuration is validated once at startup and compiled into a flat step array—disabled modules add no per-request overhead.
