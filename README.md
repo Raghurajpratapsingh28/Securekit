@@ -1,4 +1,5 @@
 # SecureKit
+[![NPM Downloads](https://img.shields.io/npm/dt/securityaudit-cli.svg?style=flat-square)](https://www.npmjs.com/package/@backend-master/securekit)
 
 A zero-runtime-dependency security toolkit for Node.js HTTP APIs.
 
